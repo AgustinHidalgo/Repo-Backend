@@ -1,0 +1,82 @@
+[
+    {
+        "id":1,
+        "title":"Samsung galaxy Z",
+        "description":"Celular",
+        "price":"999",
+        "thumbnail":"imagen",
+        "stock":"45"
+    },
+    {
+        "id":2,
+        "title":"Iphone",
+        "description":"Celular movil",
+        "price":"1000",
+        "thumbnail":"imagen",
+        "stock":"12"
+    },
+    {
+        "id":3,
+        "title":"Ipad",
+        "description":"Tableta",
+        "price":"800",
+        "thumbnail":"imagen",
+        "stock":"10"
+    },
+    {
+        "id":4,
+        "title":"AppleWatch",
+        "description":"Reloj inteligente",
+        "price":"245",
+        "thumbnail":"imagen",
+        "stock":"15"
+    },
+    {
+        "id":5,
+        "title":"AirPods max",
+        "description":"Auriculares",
+        "price":"700",
+        "thumbnail":"imagen",
+        "stock":"30"
+    },
+    {
+        "id":6,
+        "title":"samsung galaxy S",
+        "description":"Celular",
+        "price":"600",
+        "thumbnail":"imagen",
+        "stock":"34"
+    },
+    {
+        "id":7,
+        "title":"samsung galaxy A",
+        "description":"Celular",
+        "price":"450",
+        "thumbnail":"imagen",
+        "stock":"12"
+    },
+    {
+        "id":8,
+        "title":"samsung galaxy flip4",
+        "description":"Celular",
+        "price":"500",
+        "thumbnail":"imagen",
+        "stock":"20"
+    },
+    {
+        "id":9,
+        "title":"samsung galaxy z fold",
+        "description":"Celular",
+        "price":"800",
+        "thumbnail":"imagen",
+        "stock":"23"
+    },
+    {
+        "id":10,
+        "title":"samsung galaxy S22",
+        "description":"Celular",
+        "price":"600",
+        "thumbnail":"imagen",
+        "stock":"50"
+    }
+]
