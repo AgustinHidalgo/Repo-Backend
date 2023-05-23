@@ -1,0 +1,32 @@
+<ul>
+  <h1>Perfil de {{user.fullname}}</h1>
+  <li style="list-style:none;">
+    <h2 style="color: darkcyan; text-transform:uppercase">Datos:</h2>
+    <div style="display: flex; flex-direction:column">
+      <p><span style="color: rgb(40, 119, 165); text-transform:uppercase">Id
+          user</span>:
+        {{user._id}}</p>
+      <p><span
+          style="color: rgb(40, 119, 165); text-transform:uppercase"
+        >Email</span>:
+        {{user.email}}</p>
+      <p><span
+          style="color: rgb(40, 119, 165); text-transform:uppercase"
+        >Role</span>:
+        {{user.role}}</p>
+      <p><span
+          style="color: rgb(40, 119, 165); text-transform:uppercase"
+        >Tickets</span>:
+        {{user.tickets}}</p>
+    </div>
+  </li>
+</ul>
+
+<div class="containerButton">
+  <button onclick="location.href='/'">
+    Volver a inicio
+  </button>
+  <button type="submit" onclick="location.href='/products'" class="btn">
+    Agregar producto
+  </button>
+</div>
