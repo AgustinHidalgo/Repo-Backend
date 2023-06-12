@@ -1,0 +1,180 @@
+paths: 
+  /users:
+    get:
+      summary: Get all users
+      tags: 
+        - Users
+      responses:
+        "200":
+          description: All users ready 
+          content: 
+            application/json:
+              schemas: 
+                type: Array
+                items:
+                  $ref: '#/components/schemas/User'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /users/{uid}:
+    get:
+      summary: Get user by id
+      tags: 
+        - Users
+      parameters:
+      - name: uid
+        in: path
+        description: User identifier
+      responses:
+        "200":
+          description: One user was found 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/User'
+              example:
+                id: asasasasas
+                fullname: Lorenzo Noguera
+                firstName: Lorenzo
+                lastName: Noguera
+                email: lnoguera@gmail.com
+                password: kjkjkjkjkjkjkj
+                role: User
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    put:
+      summary: Update user
+      tags: 
+        - Users
+      parameters:
+      - name: uid
+        in: path
+        description: User identifier
+      responses:
+        "200":
+          description: Succesfull update process 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/User'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    delete:
+      summary: Delete user
+      tags: 
+        - Users
+      parameters:
+      - name: uid
+        in: path
+        description: User identifier
+      responses:
+        "200":
+          description: Succesfull delete user process 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/User'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /users/login:
+    post:
+      summary: Login user
+      tags: 
+        - Users
+      parameters:
+      - name: Email and password
+        in: body
+        description: Login user
+      responses:
+        "200":
+          description: Succesfull login process 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/User'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /users/registro:
+    post:
+      summary: Create user
+      tags: 
+        - Users
+      parameters:
+      - name: Data
+        in: body
+        description: Register user
+      responses:
+        "200":
+          description: Succesfull register process 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/User'
+              example:
+                firstName: Lorenzo
+                lastName: Noguera
+                email: lnoguera@gmail.com
+                password: kjkjkjkjkjkjkj
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /users/premium/{id}:
+    put:
+      summary: Change role user
+      tags: 
+        - Users
+      parameters:
+      - name: uid
+        in: path
+        description: User identifier
+      responses:
+        "200":
+          description: Succesfull change role process 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/User'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id: asjdasdasdasdas
+        fullname: 
+          type: string
+        firstName:
+          type: string
+        lastName: 
+          type: string
+        email: 
+          type: string
+        age:
+          type: number
+        password: 
+          type: string
+        role:
+          type: string
+        example:
+          id: asdasdasdas
+          fullname: Lorenzo Noguera
+          firstName: Lorenzo
+          lastName: Noguera
+          email: lnoguera@gmail.com
+          password: kjkjkjkjkjkjkj
+          role: User

@@ -1,0 +1,170 @@
+paths:
+  /carts:
+    get:
+      summary: Get all carts
+      tags: 
+        - Carts
+      responses:
+        "200":
+          description: All carts  
+          content: 
+            application/json:
+              schemas: 
+                type: Array
+                items:
+                  $ref: '#/components/schemas/Cart'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    post:
+      summary: Create cart
+      tags: 
+        - Carts
+      responses:
+        "200":
+          description: Create cart 
+          content: 
+            application/json:
+              schemas:
+                $ref: '#/components/schemas/Cart'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /carts/{cid}:
+    get:
+      summary: Get one cart
+      tags: 
+        - Carts
+      parameters:
+      - name: cid
+        in: path
+        required: true
+        description: Cart identifier
+      responses:
+        "200":
+          description: one cart found  
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Cart'
+              example:
+                  id: abcjajq123r4
+                  price: 500
+                  quantity: 3
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    put:
+      summary: Update cart
+      tags: 
+        - Carts
+      parameters:
+      - name: cid
+        in: path
+        required: true
+        description: Cart identifier
+      responses:
+        "200":
+          description: Update cart 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Cart'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    delete:
+      summary: Delete cart
+      tags: 
+        - Carts
+      parameters:
+      - name: cid
+        in: path
+        description: Cart identifier
+      responses:
+        "200":
+          description: Delete cart 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Cart'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /carts/{cid}/purchase:
+    post:
+      summary: Create ticket cart
+      tags: 
+        - Carts
+      parameters:
+      - name: cid
+        in: path
+        required: true
+        description: Cart identifier
+      responses:
+        "200":
+          description: Create ticket cart 
+          content: 
+            application/json:
+              schemas:
+                $ref: '#/components/schemas/Cart'
+              example:
+                id: afasfsdffqq
+                code: 123e23fafas
+                user: lnoguera@gmail.com
+                total: 500
+                createdAt: 2023-05-04
+                updatedAt: 2023-05-04
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /carts/{cid}/products/{pid}:
+    post:
+      summary: Add product to cart
+      tags: 
+        - Carts
+      parameters:
+      - name: cid
+        in: path
+        required: true
+        description: Cart identifier
+      - name: pid
+        in: path
+        required: true
+        description: Product identifier
+      responses:
+        "200":
+          description: Add product
+          content: 
+            application/json:
+              schemas:
+                $ref: '#/components/schemas/Cart'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+
+
+
+components:
+  schemas:
+    Cart:
+      type: Array
+      items:
+        type: object
+        properties:
+          id: abcdergd12345
+          price:
+            type: number
+          quantity:
+            type: number
+          example:
+            id: abcjajq123r4
+            price: 500
+            quantity: 3

@@ -1,0 +1,150 @@
+paths:
+  /products:
+    get:
+      summary: Get all products
+      tags: 
+        - Products
+      responses:
+        "200":
+          description: All products  
+          content: 
+            application/json:
+              schemas: 
+                type: Array
+                items:
+                  $ref: '#/components/schemas/Product'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    post:
+      summary: Create product
+      tags: 
+        - Products
+      parameters:
+      - name: Data
+        in: body
+        description: Create product
+      responses:
+        "200":
+          description: Succesfull product create process
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Product'
+              example:
+                id: asdasdasdas
+                title: Fideos capelletini
+                descripcion: gluten free
+                code: abc123
+                price: 120
+                status: true
+                stock: 300
+                category: food
+                owner: Marcelo Ortigoza
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  /products/{pid}:
+    get:
+      summary: Get one products
+      tags: 
+        - Products
+      parameters:
+      - name: pid
+        in: path
+        description: Product identifier
+      responses:
+        "200":
+          description: one product found  
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Product'
+              example:
+                id: asdasdasdas
+                title: Fideos capelletini
+                descripcion: gluten free
+                code: abc123
+                price: 120
+                status: true
+                stock: 300
+                category: food
+                owner: Marcelo Ortigoza
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    put:
+      summary: Update product
+      tags: 
+        - Products
+      parameters:
+      - name: pid
+        in: path
+        description: Product identifier
+      responses:
+        "200":
+          description: Update product 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Product'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+    delete:
+      summary: Delete product
+      tags: 
+        - Products
+      parameters:
+      - name: pid
+        in: path
+        description: Product identifier
+      responses:
+        "200":
+          description: Delete product 
+          content: 
+            application/json:
+              schemas: 
+                $ref: '#/components/schemas/Product'
+        "400":
+          description: Server error
+        "500":
+          description: Missing data
+  
+
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id: askfjnasjfnas
+        title: 
+          type: string
+        description: 
+          type: string
+        code:
+          type: string
+        price: 
+          type: number
+        status:
+          type: boolean
+        stock:
+          type: number
+        category: food
+        owner: 
+          type: string
+        example:
+          id: asdasdasdas
+          title: Fideos capelletini
+          descripcion: gluten free
+          code: abc123
+          price: 120
+          status: true
+          stock: 300
+          category: food
+          owner: Marcelo Ortigoza
