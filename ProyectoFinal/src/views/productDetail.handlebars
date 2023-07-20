@@ -1,0 +1,40 @@
+<div class="navbar">
+  <div class="containerLinks">
+    <a class="link" href="http://localhost:2022/products">Productos</a>
+    <a class="link"  href="http://localhost:2022/carts/{{user.cart}}">Carrito</a>
+    <a class="link"  href="http://localhost:2022/profile">Perfil</a>
+    <a class="link"  href="http://localhost:2022/users/logout">Cerrar sesion</a>
+  </div>
+</div>
+<div class="containerNavigation">
+  <span class="span">Navegando: {{user.first_name}}</span> 
+  <span id="userId" class="span">Id:{{user._id}}</span>
+</div>
+{{#if product}}
+  <div class="containerDetailProduct">
+    <h2 class="title" style="margin-top: -20px">{{product.title}}</h2>
+    <div class="containerInfoDetail">
+      <p class="texto">Descripción:
+        <span class="span">{{product.description}}</span></p>
+      <p class="texto">Precio: $<span class="span">{{product.price}}</span></p>
+      <p class="texto">Código de producto:
+        <span class="span">{{product.code}}</span></p>
+      <p class="texto">Stock: <span class="span">{{product.stock}}</span></p>
+      <p class="texto">Categoría:
+        <span class="span">{{product.category}}</span></p>
+      <p class="texto">ID:
+        <span class="span" id="prodId">{{product._id}}</span></p>
+    </div>
+    <button id="addToCart"  class="btn" style="margin-top: 3%;">
+      Agregar al carrito
+    </button>
+    <button id="deleteProduct" class="btn" style="margin-top: 3%;">Eliminar
+      producto</button>
+  </div>
+  </div>
+{{else}}
+  <h2>El producto con el ID {{product._id}} no existe</h2>
+{{/if}}
+
+<script type="module" src="/js/product.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

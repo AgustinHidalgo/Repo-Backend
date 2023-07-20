@@ -1,0 +1,38 @@
+<h1 class="title">
+  Bienvenido
+</h1>
+<div class="containerSubtitle">
+  <span class="subtitle">Inicie sesión para ver nuestros productos</span>
+</div>
+<div class="container-img">
+
+</div>
+<form class="form" action="/users/login" method="post" >
+    <span class="subtitle">Email</span>
+  <input type="email" name="email" class="input" />
+    <span class="subtitle">Contraseña</span>
+  <input
+    type="password"
+    name="password"
+    class="input"
+    style="margin-bottom:2%;"
+  />
+  <button type="submit" class="btn">
+    Ingresar
+  </button>
+</form>
+
+<div class="containerButton">
+  <a class="link" href="/reset-password">
+    ¿Olvidaste tu contraseña?
+  </a>
+</div>
+
+<div class="containerButton" style="flex-direction:column">
+  <h2 class="h2">
+    USUARIO NUEVO?
+  </h2>
+  <button type="submit" onclick="location.href='/register'" class="btn">
+    Registrarse
+  </button>
+</div>
